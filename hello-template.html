@@ -1,0 +1,21 @@
+<!-- 
+	동작 환경 순서
+	1. [웹 브라우저] → [내장 톰켓 서버]로 localhost:8080/hello-mvc 호출
+	2. 스프링 부트 안의 스프링 컨테이너 안의 [HelloController]로 이동
+	3. → [viewResolver]로 return:hello-template & model(name:{url의 ?name= 값}) 넘겨주기
+	4. [viewResolver] → [Thymeleaf 템플릿 엔진]으로 resources:templates/hello-template.html 처리 부탁
+	5. → [웹 브라우저]로 렌더링으로 변환한 hello-template.html 응답
+-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 템플릿 엔진이 동작시 p 태그 안 문자열이 th:text 값으로 치환
+	서버 없이 html 코드를 볼 때 p 태그 문자열 출력 (해당 코드가 제대로 실행되나 확인용) -->
+<p th:text="'hello ' + ${name}">(확인용) hello-template입니다.</p>
+</body>
+</html>
