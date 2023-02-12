@@ -14,7 +14,7 @@ public class HelloController {
 	@GetMapping("hello")
 	public String hello(Model model) {
 		
-//		src/main/resources:templates의 hello.html 17번째 line 의 ${data}를 hello!!로 변환
+//		src/main/resources:templates의 hello.html 18번째 line 의 ${data}를 hello!!로 변환
 //		addAttribute(attributeName, attributeValue) → (키, 값) 구조
 		model.addAttribute("data", "hello!!!");
 		
