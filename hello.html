@@ -1,0 +1,20 @@
+<!-- 파일 위치 : src/main/resources/templates/hello.html -->
+<!-- 
+	동작 환경 순서
+	1. [웹 브라우저] → [내장 톰켓 서버]로 localhost:8080/hello 호출
+	2. 스프링 부트 안의 스프링 컨테이너 안의 [HelloController]로 이동
+	3. → [viewResolver]로 return:hello & model(data:hello!!) 넘겨주기
+	4. [viewResolver] → [Thymeleaf 템플릿 엔진]으로 resources:templates/hello.html 처리 부탁
+	5. → [웹 브라우저]로 렌더링으로 변환한 hello.html 응답
+-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Hello</title>
+</head>
+<body>
+<p th:text="'정해진 값은 ' + ${data}">(확인용) hello.html입니다.</p>
+</body>
+</html>
